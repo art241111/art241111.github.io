@@ -1,0 +1,61 @@
+.divBody{
+    margin-left: 30%; /* Отступ слева */
+    margin-top: 8%;
+    width: 40%; /* Ширина слоя */
+    padding: 10px;
+    text-align: center;
+}
+
+body{
+    background: #ffffff;
+    background-attachment: fixed; /* Фон страницы фиксируется */
+    background-repeat: repeat-x;
+    background-size: 100%;
+}
+
+h1{
+    font-size: 400%;
+    margin-bottom: 30px;
+}
+
+.button{
+    background: brown;
+    width: 140px;
+    padding: 7px;
+    margin-left: 38%;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 17px;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    margin-bottom: 15px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+h4{
+    margin: 0;
+    font-weight: 600;
+}
+
+img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
