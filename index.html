@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5 друзей</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class = "divBody">
+    <h1>Выбери 5 человек из своего списка друзей</h1>
+    <p>Нажми на кнопку ниже и ты получишь список из 5 друзей</p>
+    <div class = 'button'>
+        <a href= "https://oauth.vk.com/authorize?client_id=7010044&display=page&redirect_uri=https://art241111.github.io/Friends/friends.html&scope=friends&response_type=token&v=5.95&state=123456">
+            Показать друзей
+        </a>
+    </div>
+</div>
+
+<script src= "/VKFriends/js/jQuery.js"></script>
+<script>
+    $(loadPage);
+    function loadPage() {
+        if (localStorage.length != 0){
+            location.href = 'Friends/friends.html/';
+        }
+    }
+</script>
+</body>
+
+</html>
+
