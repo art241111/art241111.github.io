@@ -68,15 +68,18 @@ function loadInformation() {
         drawInfoAboutUser(response);
     })
 
-    //Вывод друзей
-    sendRequest('friends.search',{count: 50, fields: 'photo_100,online', v: '5.52',access_token: currentAccessToken}, function (data) {
+
+    // Находим количество друзей у пользователя
+    sendRequest('friends.get',{access_token:currentAccessToken,user_ids: currentUserID, v: '5.52'}, function (data) {
         const {response} = data;
         var colFriend = response.count;
-
         localStorage.setItem("colFriends", JSON.stringify(colFriend));
-
         if(FirstStart === 1){runSearchFriends()}
+    })
 
+    //Вывод друзей
+    sendRequest('friends.search',{count: localStorage.getItem('colFriends'), fields: 'photo_100,online', v: '5.52',access_token: currentAccessToken}, function (data) {
+        const {response} = data;
         drawFriends(response);
     })
 
