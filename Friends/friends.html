@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>VK API</title>
+    <title>Найдено 5 друзей</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="/Friends/styles.css">
     <style>
         .divBody{
             margin-left: 30%; /* Отступ слева */
@@ -16,7 +16,7 @@
 
         ul{
             list-style: none;
-            margin-left: 20%;
+            margin-left: 22%;
         }
 
         li{
@@ -57,7 +57,9 @@
 
             width: 400px;
 
-            margin-left: 15%;
+            margin-left: 28%;
+
+            font-size: 20px;
         }
 
         .friends{
@@ -65,7 +67,7 @@
             font-size: 130%;
         }
         h2{
-          font-size: 200%;
+            font-size: 200%;
         }
 
         #load{
@@ -77,8 +79,70 @@
             margin-top: 30px;
 
         }
-    </style>
 
+        @media (max-width: 768px) {
+            ul {
+                margin-left: 13%;
+            }
+            h2 {
+                font-size: 229%;
+                margin-left: -43px;
+            }
+
+            .friends {
+                margin-left: -39px;
+                margin-top: -13px;
+                font-size: 28px;
+            }
+
+            .button {
+                margin-left: 71px;
+                width: 370px;
+                height: 41px;
+                font-size: 30px;
+            }
+
+            .divBody {
+                margin-left: 10%;
+                margin-top: 6%;
+                width: 76%;
+            }
+
+            h4 {
+                font-size: 24px;
+            }
+        }
+        @media (max-width: 479px) {
+            ul {
+                margin-left: -7%;
+            }
+            h2 {
+                font-size: 229%;
+                margin-left: -43px;
+            }
+
+            .friends {
+                margin-left: -39px;
+                margin-top: -13px;
+            }
+
+            .button {
+                margin-left: 42px;
+                padding-top: 9px;
+                padding-bottom: 0px;
+                width: 257px;
+                font-size: 23px;
+            }
+
+            .divBody {
+                margin-left: 2%;
+                margin-top: 6%;
+                width: 100%;
+            }
+
+        }
+
+    </style>
 </head>
 <body>
     <div class = divBody>
@@ -91,8 +155,9 @@
     </div>
 
 
-    <script src= "/js/jQuery.js"></script>
-    <script src= "/js/friends.js"></script>
+    <script src= "/VKFriends/js/jQuery.js"></script>
+    <script src= "/VKFriends/js/friends.js"></script>
+    <script src= "/VKFriends/js/pidcrypt.js"></script>
 </body>
 
 </html>
