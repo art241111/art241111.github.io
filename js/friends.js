@@ -121,5 +121,3 @@ function drawFriends(friends) {
 
     $('ul').html(html);
 }
-
-public_html
