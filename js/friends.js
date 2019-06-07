@@ -1,11 +1,12 @@
 $('#load').on('click', exitAccaunt);
-$('#changeFriends').on('click', changeFriends)
+$('#changeFriends').on('click', runSearchFriends)
 $(loadInformation);
 
-function changeFriends() {
+function runSearchFriends() {
     // генерируем рандомный массиы
+
     var arr = [] ;
-    var max = 50;
+    var max = localStorage.getItem('colFriends') - 1;
     var rundomnumber;
 
     while (arr.length <= 5) {
@@ -14,7 +15,6 @@ function changeFriends() {
             arr.push(rundomnumber);         // записываем в массив т.к нету
         }
     }
-    console.log(arr);
     localStorage.setItem("iRandom", JSON.stringify(arr));
 
     // Перезагружаем информацию
@@ -42,6 +42,7 @@ function sendRequest(method, params, func) {
 }
 
 function loadInformation() {
+    var FirstStart = 1;
     // При первом запуске
     if (window.location.hash != '') {
         // считываем информцию
@@ -53,21 +54,8 @@ function loadInformation() {
         localStorage.setItem('access_token', accessToken);
         localStorage.setItem('userID', userID);
         window.location.hash = '';
-
-
-        // генерируем рандомный массиы
-        var arr = [] ;
-        var max = 50;
-        var rundomnumber;
-
-        while (arr.length <= 5) {
-            rundomnumber = Math.floor(Math.random() * max); //создадим случайное число
-            if (arr.indexOf(rundomnumber) === -1) {         // проверим есть оно  у нас или нет
-                arr.push(rundomnumber);         // записываем в массив т.к нету
-            }
-        }
-        localStorage.setItem("iRandom", JSON.stringify(arr));
-    }
+        FirstStart = 1;
+    } else FirstStart = 0;
 
     // Записываем в переменные значения
     var currentAccessToken = localStorage.getItem('access_token');
@@ -83,8 +71,16 @@ function loadInformation() {
     //Вывод друзей
     sendRequest('friends.search',{count: 50, fields: 'photo_100,online', v: '5.52',access_token: currentAccessToken}, function (data) {
         const {response} = data;
+        var colFriend = response.count;
+
+        localStorage.setItem("colFriends", JSON.stringify(colFriend));
+
+        if(FirstStart === 1){runSearchFriends()}
+
         drawFriends(response);
     })
+
+
 }
 
 function drawInfoAboutUser(userInfo) {
@@ -93,21 +89,17 @@ function drawInfoAboutUser(userInfo) {
     $('h2').html(html);
 }
 
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
 
 function drawFriends(friends) {
     var html = '';
     var array = JSON.parse(localStorage.getItem("iRandom"));
-    console.log(array);
 
     for(var i = 0; i < 5;i++ ){
         var f = friends.items[array[i]];
+
         var online = f.online ? 'Online':'Offline';
 
         html += '<li>'
-
             +'<a target="_blank" href="https://vk.com/id'+ f.id +'" >'
             + '<img src="'+ f.photo_100+'"/>'
             +'<div>'
