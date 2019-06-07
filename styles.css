@@ -8,29 +8,30 @@
 
 body{
     background: #ffffff;
-    background-attachment: fixed; /* Фон страницы фиксируется */
-    background-repeat: repeat-x;
     background-size: 100%;
 }
 
 h1{
-    font-size: 400%;
-    margin-bottom: 30px;
+    font-size: 200%;
+    margin-bottom: 20px;
+    margin-top: 0;
 }
 
 .button{
     background: brown;
-    width: 140px;
+    width: 70px;
     padding: 7px;
-    margin-left: 38%;
-    margin-top: 30px;
+    padding-top: 0px;
+    margin-left: 36%;
+    margin-top: 15px;
     border-radius: 10px;
 }
 
 a{
     text-decoration: none;
     color: #ffffff;
-    font-size: 17px;
+    font-size: 50%;
+    margin: 0;
 }
 
 ul{
@@ -52,4 +53,10 @@ img{
     width: 100px;
     height: 100px;
     margin-right: 20px;
+}
+
+p{
+    font-size: 50%;
+    margin-bottom: 0px;
+    margin-top: 10px;
 }
