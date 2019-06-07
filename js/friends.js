@@ -22,7 +22,7 @@ function changeFriends() {
 }
 function exitAccaunt() {
     localStorage.clear();
-    location.href = 'https://art241111.github.io';
+    location.href = 'https://art241111.github.io    ';
 }
 
 //Функции, которые получают информацию
