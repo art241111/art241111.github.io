@@ -1,5 +1,5 @@
 .divBody{
-    margin-left: 30%; /* Отступ слева */
+    margin-left: 31%; /* Отступ слева */
     margin-top: 8%;
     width: 40%; /* Ширина слоя */
     padding: 10px;
@@ -12,14 +12,15 @@ body{
 }
 
 h1{
-    font-size: 200%;
+    font-size: 500%;
     margin-bottom: 20px;
     margin-top: 0;
 }
 
 .button{
     background: brown;
-    width: 70px;
+    width: 190px;
+    height: 30px;
     padding: 7px;
     padding-top: 0px;
     margin-left: 36%;
@@ -30,8 +31,11 @@ h1{
 a{
     text-decoration: none;
     color: #ffffff;
-    font-size: 50%;
+    font-size: 123%;
     margin: 0;
+    margin-top: 6px;
+    position: absolute;
+    margin-left: -64px;
 }
 
 ul{
@@ -56,7 +60,65 @@ img{
 }
 
 p{
-    font-size: 50%;
+    font-size: 120%;
     margin-bottom: 0px;
     margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    h1{
+        font-size: 230%;
+        margin-bottom: 18px;
+    }
+
+    p{
+        font-size: 90%;
+    }
+
+    .button {
+        width: 160px;
+        height: 30px;
+        padding: 7px;
+        padding-top: 0px;
+        margin-left: 21%;
+        margin-top: 15px;
+    }
+
+    a {
+        font-size: 113%;
+        margin: 0;
+        margin-left: -60px;
+        margin-top: 7px;
+    }
+}
+@media (max-width: 479px) {
+    h1{
+        font-size: 145%;
+        margin-bottom: 11px;
+    }
+
+    p{
+        font-size: 67%;
+        margin-top: 0;
+    }
+
+    a{
+        font-size: 75%;
+        margin: 0;
+        margin-left: -40px;
+        margin-top: 3px;
+    }
+    .button{
+        width: 124px;
+        margin-top: 9px;
+        height: 15px;
+        margin-left: 18%;
+    }
+
+    .divBody {
+        margin-top: 12%;
+        width: 57%;
+        margin-left: 20%;
+    }
+
 }
