@@ -22,7 +22,7 @@ function changeFriends() {
 }
 function exitAccaunt() {
     localStorage.clear();
-    location.href = 'http://localhost:63342/VKFriends/';
+    location.href = 'https://art241111.github.io';
 }
 
 //Функции, которые получают информацию
